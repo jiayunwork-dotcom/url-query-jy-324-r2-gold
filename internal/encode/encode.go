@@ -24,7 +24,7 @@ func escape(s string) string {
 	for i := 0; i < len(s); i++ {
 		c := s[i]
 		if c == ' ' {
-			b.WriteString("%20")
+			b.WriteByte('+')
 			continue
 		}
 		if unreserved(c) {
